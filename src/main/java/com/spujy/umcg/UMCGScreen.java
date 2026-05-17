@@ -1,10 +1,10 @@
 package com.spujy.umcg;
 
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.component.Component;
 import net.minecraft.text.Text;
 
-import java.awt.*;
 
 public class UMCGScreen extends Screen {
 
@@ -20,5 +20,20 @@ public class UMCGScreen extends Screen {
     protected void init(){
         int startX = (this.width - menuWidth) / 2;
         int startY = (this.height - menuHeight) / 2;
+    }
+
+    @Override
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        int startX = (this.width - menuWidth) / 2;
+        int startY = (this.height - menuHeight) /2;
+
+        context.fill(startX, startY, startX + menuWidth, startY + menuHeight, 0xD0000000);
+        context.drawText(this.textRenderer, "UMCG Menu", startX + 10, startY + 10, 0xFFFFFF, false);
+        super.render(context, mouseX, mouseY, delta);
+    }
+
+    @Override
+    public boolean shouldPause() {
+        return true;
     }
 }

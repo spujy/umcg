@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "umcg",
+	"version": "${version}",
+	"name": "UMCG",
+	"description": "Ultimate Minecraft Guide!",
+	"authors": [
+		"spujy"
+	],
+	"contact": {
+		"homepage": "-",
+		"sources": "-"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/umcg/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.spujy.umcg.UMCG"
+		],
+		"fabric-datagen": [
+			"com.spujy.umcg.UMCGDataGenerator"
+		],
+      "Client": [
+        "com.spujy.umcg.UMCGModClient"
+      ]
+	},
+	"mixins": [
+		"umcg.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
